@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/jersey_orders_2023/static/css/main.073c9b0a.css",
+    "main.js": "/jersey_orders_2023/static/js/main.1fea99f2.js",
+    "static/js/787.28a76cc2.chunk.js": "/jersey_orders_2023/static/js/787.28a76cc2.chunk.js",
+    "static/media/logo.svg": "/jersey_orders_2023/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/jersey_orders_2023/index.html",
+    "main.073c9b0a.css.map": "/jersey_orders_2023/static/css/main.073c9b0a.css.map",
+    "main.1fea99f2.js.map": "/jersey_orders_2023/static/js/main.1fea99f2.js.map",
+    "787.28a76cc2.chunk.js.map": "/jersey_orders_2023/static/js/787.28a76cc2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.1fea99f2.js"
+  ]
+}
