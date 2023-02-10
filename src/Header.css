@@ -1,0 +1,85 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fdfdfd;
+  transition: .4s;
+  border-top: 5px solid #231c34;
+}
+
+.scroll-header {
+  box-shadow: 0 4px 4px hsl(0deg 0% 4% / 30%);
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  margin-top: 61px;
+  padding-bottom: 93px;
+}
+
+nav {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav-left {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-right {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-item {
+  padding-right: 1rem;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  font-weight: bold;
+  color: #231c34;
+}
+
+.team-logo {
+  width: 48px;
+  height: 48px;
+  border-bottom: none;
+  transition: transform .4s ease-in-out;
+}
+
+.team-logo:hover {
+  transform: rotate(10deg);
+}
+
+.header-holder {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 1;
+}
+
+.no-border {
+  border: none;
+}
