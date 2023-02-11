@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from './GeorgiaTechTribeLogo.PNG';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetUser } from './store/userSlice';
+import { logout } from './store/loggedInSlice';
 
 function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -26,6 +29,16 @@ function Header() {
     boxShadow: "0 4px 4px hsl(0deg 0% 4% / 30%)"
   }
 
+  const isLoggedIn = useSelector((state) => state.loggedIn.value);
+  const dispatch = useDispatch();
+
+  function handleLogout() {
+    dispatch(resetUser());
+    dispatch(logout());
+  }
+
+  const first_name = useSelector((state) => state.user.value['first_name']);
+
   return (
     <header className='site-header' style={ scrollPosition > 10 ? headerShadow : null }>
       <nav>
@@ -34,7 +47,7 @@ function Header() {
             <Link className='team-logo' to='/'><img src={logo} className='team-logo' alt='logo'/></Link>
           </div>
           <div className='nav-item'>
-            Welcome Name!
+            Welcome{ isLoggedIn && ' ' + first_name}!
           </div>
         </div>
         <div className='nav-right'>
@@ -52,9 +65,18 @@ function Header() {
               </svg>
             </Link>
           </div>
-          <div className='nav-item'>
-            Logout
-          </div>
+          {
+            isLoggedIn &&
+            <div className='nav-item login' onClick={() => handleLogout()}>
+              Logout
+            </div>
+          }
+          {
+            !isLoggedIn &&
+            <div className='nav-item'>
+              <Link to='/login' className='login no-border'>Login</Link>
+            </div>
+          }
         </div>
       </nav>
     </header>

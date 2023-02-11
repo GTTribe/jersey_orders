@@ -52,12 +52,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-}
-
-.nav-item:hover {
-  font-weight: bold;
-  color: #231c34;
 }
 
 .team-logo {
@@ -82,4 +76,23 @@ nav {
 
 .no-border {
   border: none;
+}
+
+.login {
+  cursor: pointer;
+}
+
+.login:hover {
+  font-weight: bold;
+  color: #231c34;
+}
+
+input[type=text], input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

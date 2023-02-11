@@ -68,9 +68,9 @@ class ItemOrderForm extends React.Component {
           <h2>Customizations:</h2>
           <p className='small-text'>*Please type it exactly how you want it to look</p>
           { this.state.item_type !== 'Shorts' &&
-            <p>Custom Name: <input name='item_custom_name' type='text' value={this.state.item_custom_name} onChange={this.handleChange}/></p>
+            <p>Custom Name: <input name='item_custom_name' type='text' value={this.state.item_custom_name} onChange={this.handleChange} placeholder='Optional'/></p>
           }
-          <p>Custom Number: <input name='item_custom_number' type='text' value={this.state.item_custom_number} onChange={this.handleChange}/></p>
+          <p>Custom Number: <input name='item_custom_number' type='text' value={this.state.item_custom_number} onChange={this.handleChange} placeholder='Optional'/></p>
         </div>
         <div className='bottom-border-box'>
           <h2>Sizing:</h2>

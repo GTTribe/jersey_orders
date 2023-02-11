@@ -5,6 +5,10 @@ import CheckOrder from './CheckOrder';
 import NewOrder from './NewOrder';
 import ManageOrder from './ManageOrder';
 import Sizing from './Sizing';
+import Signup from './Signup';
+import Login from './Login';
+import About from './About';
+import Thanks from './Thanks';
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
         <Route path = '/check_order' element={<CheckOrder/>}/>
         <Route path = '/manage_order' element={<ManageOrder/>}/>
         <Route path = '/size_chart' element={<Sizing/>}/>
+        <Route path = '/register' element={<Signup/>}/>
+        <Route path = '/login' element={<Login/>}/>
+        <Route path = '/didyouccr?' element={<About/>}/>
+        <Route path = '/thank_you' element={<Thanks/>}/>
       </Routes>
     </Router>
   );
