@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/jersey_orders_2023/static/css/main.5783b961.css",
-    "main.js": "/jersey_orders_2023/static/js/main.fa7dd7e9.js",
+    "main.css": "/jersey_orders_2023/static/css/main.3a85cbfd.css",
+    "main.js": "/jersey_orders_2023/static/js/main.22d5470c.js",
     "static/js/787.28a76cc2.chunk.js": "/jersey_orders_2023/static/js/787.28a76cc2.chunk.js",
     "static/media/Size Chart 2020.jpg": "/jersey_orders_2023/static/media/Size Chart 2020.106102e04cbca5073d34.jpg",
     "static/media/LightShortSleeveProof.png": "/jersey_orders_2023/static/media/LightShortSleeveProof.22075d56814c0de54ea5.png",
@@ -31,12 +31,12 @@
     "static/media/ProductSans-Black.ttf": "/jersey_orders_2023/static/media/ProductSans-Black.99679fcb879a842df8c5.ttf",
     "static/media/SunHoodiePreview.png": "/jersey_orders_2023/static/media/SunHoodiePreview.11ba75f6e0954853e948.png",
     "index.html": "/jersey_orders_2023/index.html",
-    "main.5783b961.css.map": "/jersey_orders_2023/static/css/main.5783b961.css.map",
-    "main.fa7dd7e9.js.map": "/jersey_orders_2023/static/js/main.fa7dd7e9.js.map",
+    "main.3a85cbfd.css.map": "/jersey_orders_2023/static/css/main.3a85cbfd.css.map",
+    "main.22d5470c.js.map": "/jersey_orders_2023/static/js/main.22d5470c.js.map",
     "787.28a76cc2.chunk.js.map": "/jersey_orders_2023/static/js/787.28a76cc2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5783b961.css",
-    "static/js/main.fa7dd7e9.js"
+    "static/css/main.3a85cbfd.css",
+    "static/js/main.22d5470c.js"
   ]
 }
