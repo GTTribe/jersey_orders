@@ -57,7 +57,15 @@ class LoginForm extends React.Component {
       pickup_method: docSnap.data().pickup_method
     });
 
-    this.props.initCart(docSnap.data().orderItems);
+    console.log('key check');
+
+    const order_items = docSnap.data().orderItems;
+    
+    if (order_items === undefined) {
+      this.props.initCart({});
+    } else {
+      this.props.initCart(order_items);
+    }
 
     this.props.login();
   }

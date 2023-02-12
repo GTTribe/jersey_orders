@@ -15,6 +15,9 @@ function CheckOrder() {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
 
+  const isCartEmpty = Object.keys(cart).length === 0;
+  console.log(isCartEmpty);
+
   function getTotals() {
     var total = 0;
     for (let key in cart) {
@@ -104,7 +107,7 @@ function CheckOrder() {
                 <th>Quantity</th>
               </tr>
               {
-                Object.entries(cart).map(([key, value]) => value.map((orderItem) =>
+                !isCartEmpty && Object.entries(cart).map(([key, value]) => value.map((orderItem) =>
                 <tr>
                   <td className='trash-icon'>
                     <div onClick={() => dispatch(removeFromCart([key, orderItem]))}>
