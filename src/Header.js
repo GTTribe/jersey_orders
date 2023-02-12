@@ -92,7 +92,7 @@ function Header() {
       <nav>
         <div className='nav-left'>
           <div className='nav-item' title='Home'>
-            <Link className='team-logo' to='/' onClick={() => handleBack()}><img src={logo} className='team-logo' alt='logo'/></Link>
+            <a className='team-logo' href='https://gttribe.github.io'><img src={logo} className='team-logo' alt='logo'/></a>
           </div>
           <div className='nav-item'>
             Welcome{ isLoggedIn && ' ' + first_name}!
