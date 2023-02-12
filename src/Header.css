@@ -54,6 +54,29 @@ nav {
   align-items: center;
 }
 
+.cart {
+  display: inline-block;
+  position: relative;
+}
+
+.cart .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: xx-small;
+  display: flex;
+  justify-content: center;
+}
+.cart .badge p {
+  margin: none;
+}
+
 .team-logo {
   width: 48px;
   height: 48px;

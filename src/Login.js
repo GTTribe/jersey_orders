@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './LoginForm';
 import { Link } from 'react-router-dom';
 import { viewPage } from './store/viewpageSlice';
+import { clearError } from './store/errorSlice';
 
 function Login() {
   const isLoggedIn = useSelector((state) => state.loggedIn.value);
+  const errorMsg = useSelector((state) => state.error.value);
   const dispatch = useDispatch();
 
   if (isLoggedIn) {
+    dispatch(clearError());
     dispatch(viewPage('checkout'));
   }
 
@@ -21,6 +24,11 @@ function Login() {
     <div>
       <div className='manage-banner'>
         Login
+      </div>
+      <div className='not-logged-in'>
+        <div className='not-logged-in-content'>
+          {errorMsg}
+        </div>
       </div>
       <div>
         <div className='update-button'>

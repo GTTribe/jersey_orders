@@ -94,7 +94,7 @@ function CheckOrder() {
                 <th></th>
                 <th>Item</th>
                 <th>Name</th>
-                <th>Number</th>
+                <th>#</th>
                 <th>Size</th>
                 <th>Quantity</th>
               </tr>

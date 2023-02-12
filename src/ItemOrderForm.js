@@ -39,7 +39,7 @@ class ItemOrderForm extends React.Component {
       item_type: this.state.item_type,
       item_subtype: this.state.item_subtype,
       item_size: this.state.item_size,
-      item_quantity: 1,
+      item_quantity: parseInt(this.state.item_quantity),
       item_custom_name: this.state.item_custom_name,
       item_custom_number: this.state.item_custom_number
     }
