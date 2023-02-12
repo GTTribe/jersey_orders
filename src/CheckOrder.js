@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getItemCost } from './store/OrderObject';
 import { db } from './firebase';
 import { setDoc, doc } from 'firebase/firestore';
-import { removeFromCart } from './store/cartSlice';
+import { removeFromCart, clearCart } from './store/cartSlice';
 import { viewPage } from './store/viewpageSlice';
+import { resetUser } from './store/userSlice';
+import { logout } from './store/loggedInSlice';
 
 function CheckOrder() {
   const isLoggedIn = useSelector((state) => state.loggedIn.value);
@@ -34,8 +36,6 @@ function CheckOrder() {
   };
 
   async function submitOrder() {
-    console.log("Submitting Order!");
-
     setDoc(doc(db, 'jersey_orders', userInfo['email']), {
       first_name: userInfo['first_name'],
       last_name: userInfo['last_name'],
@@ -45,6 +45,11 @@ function CheckOrder() {
       total_items: getTotals(),
       total_cost: getCost()
     });
+  
+    dispatch(resetUser());
+    dispatch(clearCart());
+    dispatch(logout());
+    dispatch(viewPage('submitted'));
   }
 
   function handleBack() {
@@ -62,7 +67,7 @@ function CheckOrder() {
       </div>
       <div className='not-logged-in'>
         <div className='not-logged-in-content'>
-          Store closes February 17th!
+          Store closes February 26th!
         </div>
       </div>
       <div className='item-display'>

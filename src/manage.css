@@ -100,3 +100,15 @@ a:hover {
   font-weight: bold;
   color: #231c34;
 }
+
+.thank-you {
+  width: 60%;
+  margin: 1rem;
+}
+
+@media (max-width: 900px) {
+  .thank-you {
+    width: auto;
+    margin: 1rem 3rem;
+  }
+}
