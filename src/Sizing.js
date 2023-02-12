@@ -1,6 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
 import sizingChart from './Size Chart 2020.jpg';
 
 function Sizing() {
@@ -9,14 +7,8 @@ function Sizing() {
   };
 
   return (
-    <div className='page-container'>
-      <Header/>
-      <main>
-        <div>
-          <img style={fixBorder} src={sizingChart}></img>
-        </div>
-      </main>
-      <Footer/>
+    <div>
+      <img style={fixBorder} src={sizingChart}></img>
     </div>
   );
 }

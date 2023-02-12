@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setUser } from './store/userSlice';
 import { login } from './store/loggedInSlice';
+import { setError } from './store/errorSlice';
+import { db } from './firebase';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
+import { capFirst } from './store/OrderObject';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -29,12 +33,29 @@ class SignupForm extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
+    const target_email = this.state.email.toLowerCase();
+    const target_last_name = this.state.last_name.toLowerCase();
+    const docRef = doc(db, 'jersey_orders', target_email);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      this.props.setError('Order exists! Please login.');
+      return;
+    }
+
     console.log("Registering!");
 
+    setDoc(doc(db, 'jersey_orders', this.state.email.toLowerCase()), {
+      first_name: capFirst(this.state.first_name),
+      last_name: capFirst(this.state.last_name),
+      email: this.state.email.toLowerCase(),
+      pickup_method: this.state.pickup_method
+    })
+
     this.props.setUser({
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
-      email: this.state.email,
+      first_name: capFirst(this.state.first_name),
+      last_name: capFirst(this.state.last_name),
+      email: this.state.email.toLowerCase(),
       pickup_method: this.state.pickup_method
     });
 
@@ -54,4 +75,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default connect(null, { setUser, login })(SignupForm);
+export default connect(null, { setUser, login, setError })(SignupForm);

@@ -6,6 +6,7 @@ import { reset } from './store/viewitemSlice';
 import { clearItem } from './store/itemProofSlice';
 import './ViewItem.css';
 import ItemOrderForm from './ItemOrderForm';
+import { viewPage } from './store/viewpageSlice';
 
 function ItemCosts(itemName) {
   switch (itemName) {
@@ -35,6 +36,7 @@ function ViewItem() {
   function handleBack() {
     dispatch(reset());
     dispatch(clearItem());
+    dispatch(viewPage('home'));
   }
 
   return (

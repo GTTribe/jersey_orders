@@ -5,6 +5,8 @@ import itemProofReducer from './itemProofSlice';
 import cartReducer from './cartSlice';
 import userReducer from './userSlice';
 import loggedInReducer from './loggedInSlice';
+import viewpageReducer from './viewpageSlice';
+import errorReducer from './errorSlice';
 
 enableMapSet();
 
@@ -14,6 +16,8 @@ export const store = configureStore({
     itemproof: itemProofReducer,
     cart: cartReducer,
     user: userReducer,
-    loggedIn: loggedInReducer
+    loggedIn: loggedInReducer,
+    viewpage: viewpageReducer,
+    error: errorReducer
   },
 })

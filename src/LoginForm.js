@@ -2,6 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setUser } from './store/userSlice';
 import { login } from './store/loggedInSlice';
+import { setError } from './store/errorSlice';
+import { initCart } from './store/cartSlice';
+import { db } from './firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { capFirst } from './store/OrderObject';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -27,14 +32,32 @@ class LoginForm extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
-    console.log("Loggin In!");
+    const target_email = this.state.email.toLowerCase();
+    const target_last_name = this.state.last_name.toLowerCase();
+    const docRef = doc(db, 'jersey_orders', target_email);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const db_last_name = docSnap.data().last_name.toLowerCase();
+      if (db_last_name !== target_last_name) {
+        this.props.setError('Invalid username/password!');
+        return;
+      }
+    } else {
+      this.props.setError('Invalid username/password!');
+      return;
+    }
+
+    console.log("Logging In!");
 
     this.props.setUser({
-      first_name: 'Anthony',
-      last_name: this.state.last_name,
-      email: this.state.email,
-      pickup_method: 'Wackamole'
+      first_name: capFirst(docSnap.data().first_name),
+      last_name: capFirst(docSnap.data().last_name),
+      email: target_email,
+      pickup_method: docSnap.data().pickup_method
     });
+
+    this.props.initCart(docSnap.data().orderItems);
 
     this.props.login();
   }
@@ -50,4 +73,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default connect(null, { setUser, login })(LoginForm);
+export default connect(null, { setUser, login, setError, initCart })(LoginForm);

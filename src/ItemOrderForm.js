@@ -1,6 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { addToCart } from './store/cartSlice';
+import { getItemID, getItemSizeId } from './store/OrderObject';
 
 class ItemOrderForm extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class ItemOrderForm extends React.Component {
     this.state = {
       item_type: props.item_type,
       item_subtype: '',
-      item_size: '',
+      item_size: 'Womens XS',
       item_quantity: 1,
       item_custom_name: '',
       item_custom_number: ''
@@ -32,21 +33,25 @@ class ItemOrderForm extends React.Component {
 
     console.log("Adding to order!");
 
-    // const dispatch = useDispatch();
-    // const order = {
-    //   item_type: this.state.item_type,
-    //   item_subtype: this.state.item_subtype,
-    //   item_size: this.state.item_size,
-    //   item_quantity: this.state.item_quantity,
-    //   item_custom_name: this.state.item_custom_name,
-    //   item_custom_number: this.state.item_custom_number
-    // }
-    // dispatch(addToCart(order));
+    const key = getItemID(this.state.item_type, this.state.item_subtype) + '+' + getItemSizeId(this.state.item_size);
+
+    const value = {
+      item_type: this.state.item_type,
+      item_subtype: this.state.item_subtype,
+      item_size: this.state.item_size,
+      item_quantity: 1,
+      item_custom_name: this.state.item_custom_name,
+      item_custom_number: this.state.item_custom_number
+    }
+
+    const payload = [key, value]
+
+    this.props.addToCart(payload);
 
     // Reset
     await this.setState({
       item_subtype: '',
-      item_size: '',
+      item_size: 'Womens XS',
       item_quantity: 1,
       item_custom_name: '',
       item_custom_number: ''
@@ -76,7 +81,7 @@ class ItemOrderForm extends React.Component {
           <h2>Sizing:</h2>
           {
             this.state.item_type === 'Shorts' &&
-            <p><select name='item_size' onChange={this.handleChange} required>
+            <p><select name='item_size' value={this.state.item_size} onChange={this.handleChange} required>
               <option value='Unisex XS'>Unisex XS</option>
               <option value='Unisex S'>Unisex S</option>
               <option value='Unisex M'>Unisex M</option>
@@ -93,7 +98,7 @@ class ItemOrderForm extends React.Component {
           }
           {
             this.state.item_type !== 'Shorts' &&
-            <p><select name='item_size' onChange={this.handleChange} required>
+            <p><select name='item_size' value={this.state.item_size} onChange={this.handleChange} required>
               <option value='Mens XS'>Men's XS</option>
               <option value='Mens S'>Men's S</option>
               <option value='Mens M'>Men's M</option>
@@ -122,4 +127,4 @@ class ItemOrderForm extends React.Component {
   }
 }
 
-export default ItemOrderForm;
+export default connect(null, { addToCart })(ItemOrderForm);

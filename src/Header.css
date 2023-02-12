@@ -96,3 +96,9 @@ input[type=text], input[type=email], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+@media (max-width: 720px) {
+  .deadline {
+    display: none;
+  }
+}
