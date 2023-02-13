@@ -36,7 +36,9 @@ function About() {
       </div>
       <div className='not-logged-in'>
         <div className='not-logged-in-content'>
-          <img src={logo} className='team-logo' alt='logo'/>
+          <a className='team-logo' href='https://gttribe.github.io'>
+            <img src={logo} className='team-logo' alt='logo'/>
+          </a>
         </div>
       </div>
     </div>

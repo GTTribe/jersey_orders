@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import logo from './GeorgiaTechTribeLogo.PNG';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,6 +43,7 @@ function Header() {
 
   const isLoggedIn = useSelector((state) => state.loggedIn.value);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleLogout() {
     dispatch(resetUser());
@@ -51,27 +52,24 @@ function Header() {
   }
 
   function handleLogin() {
-    dispatch(reset());
-    dispatch(clearItem());
+    // dispatch(reset());
+    // dispatch(clearItem());
     dispatch(viewPage('login'));
-  }
-
-  function handleBack() {
-    dispatch(reset());
-    dispatch(clearItem());
-    dispatch(viewPage('home'));
+    navigate('/login');
   }
 
   function handleCheckout() {
-    dispatch(reset());
-    dispatch(clearItem());
+    // dispatch(reset());
+    // dispatch(clearItem());
     dispatch(viewPage('checkout'));
+    navigate('/checkout');
   }
 
   function handleSizing() {
-    dispatch(reset());
-    dispatch(clearItem());
+    // dispatch(reset());
+    // dispatch(clearItem());
     dispatch(viewPage('sizing'));
+    navigate('/size_chart');
   }
 
   const first_name = useSelector((state) => state.user.value['first_name']);

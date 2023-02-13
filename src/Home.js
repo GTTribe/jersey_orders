@@ -25,6 +25,7 @@ import Sizing from './Sizing';
 import Login from './Login';
 import Signup from './Signup';
 import Thanks from './Thanks';
+import { useNavigate } from 'react-router-dom';
 
 function ItemCosts(itemName) {
   switch (itemName) {
@@ -48,11 +49,13 @@ function ItemCosts(itemName) {
 function ItemCard({ itemName, itemImage, itemProof }) {
   const itemCost = ItemCosts(itemName);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleViewItem() {
     dispatch(view(itemName));
     dispatch(setItem(itemProof));
-    dispatch(viewPage('item'))
+    dispatch(viewPage('item'));
+    dispatch(navigate('/view_item'));
   };
 
   return (
@@ -72,57 +75,34 @@ function ItemCard({ itemName, itemImage, itemProof }) {
 
 function Home() {
   const currentPageView = useSelector((state) => state.viewpage.value);
+  const navigate = useNavigate();
+
+  if (currentPageView === 'submitted') {
+    navigate('/thank_you');
+  }
 
   return (
-      currentPageView !== 'submitted' ?
       <div className='page-container'>
         <Header/>
         <main>
-          {
-            currentPageView === 'home' && 
-            <div>
-              <div className='manage-banner'>
-                Tribe 2023 Jersey Order
-              </div>
-              <div className='manage-card-holder'>
-                <div className='manage-cards'>
-                  <ItemCard itemName="Black Short Sleeve" itemImage={BlackPreview} itemProof={BlackShortSleeveProof}/>
-                  <ItemCard itemName="Black Long Sleeve" itemImage={BlackPreview} itemProof={BlackLongSleeveProof}/>
-                  <ItemCard itemName="Light Short Sleeve" itemImage={LightPreview} itemProof={LightShortSleeveProof}/>
-                  <ItemCard itemName="Light Long Sleeve" itemImage={LightPreview} itemProof={LightLongSleeveProof}/>
-                  <ItemCard itemName="Blue Short Sleeve" itemImage={BluePreview} itemProof={BlueShortSleeveProof}/>
-                  <ItemCard itemName="Blue Long Sleeve" itemImage={BluePreview} itemProof={BlueLongSleeveProof}/>
-                  <ItemCard itemName="Shorts" itemImage={ShortsPreview} itemProof={ShortsProof}/>
-                  <ItemCard itemName="Sun Hoodie" itemImage={SunHoodiePreview} itemProof={SunHoodieProof}/>
-                </div>
-              </div>
+          <div className='manage-banner'>
+            Tribe 2023 Jersey Order
+          </div>
+          <div className='manage-card-holder'>
+            <div className='manage-cards'>
+              <ItemCard itemName="Black Short Sleeve" itemImage={BlackPreview} itemProof={BlackShortSleeveProof}/>
+              <ItemCard itemName="Black Long Sleeve" itemImage={BlackPreview} itemProof={BlackLongSleeveProof}/>
+              <ItemCard itemName="Light Short Sleeve" itemImage={LightPreview} itemProof={LightShortSleeveProof}/>
+              <ItemCard itemName="Light Long Sleeve" itemImage={LightPreview} itemProof={LightLongSleeveProof}/>
+              <ItemCard itemName="Blue Short Sleeve" itemImage={BluePreview} itemProof={BlueShortSleeveProof}/>
+              <ItemCard itemName="Blue Long Sleeve" itemImage={BluePreview} itemProof={BlueLongSleeveProof}/>
+              <ItemCard itemName="Shorts" itemImage={ShortsPreview} itemProof={ShortsProof}/>
+              <ItemCard itemName="Sun Hoodie" itemImage={SunHoodiePreview} itemProof={SunHoodieProof}/>
             </div>
-          }
-          {
-            currentPageView === 'item' &&
-            <ViewItem/>
-          }
-          {
-            currentPageView === 'checkout' &&
-            <CheckOrder/>
-          }
-          {
-            currentPageView === 'sizing' &&
-            <Sizing/>
-          }
-          {
-            currentPageView === 'login' &&
-            <Login/>
-          }
-          {
-            currentPageView === 'register' &&
-            <Signup/>
-          }
+          </div>
         </main>
         <Footer/>
       </div>
-      :
-      <Thanks/>
   );
 }
 
