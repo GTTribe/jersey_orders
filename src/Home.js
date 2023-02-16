@@ -95,7 +95,7 @@ function Home() {
           <div className='item-display'>
             <div className='thank-you'>
               <p style={textCenter}>
-                Financial support is incredibly important to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a onClick={() => handleDonate()}>here</a>.
+                Financial support is incredibly appreciated to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a onClick={() => handleDonate()}>here</a>.
               </p>
             </div>
           </div>
