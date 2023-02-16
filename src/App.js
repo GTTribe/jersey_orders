@@ -8,6 +8,7 @@ import CheckOrder from './CheckOrder';
 import Login from './Login';
 import Signup from './Signup';
 import Thanks from './Thanks';
+import Donate from './Donate';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path = '/register' element={<Signup/>}/>
         <Route path = '/didyouccr?' element={<About/>}/>
         <Route path = '/thank_you' element={<Thanks/>}/>
+        <Route path = '/donate' element={<Donate/>}/>
       </Routes>
     </Router>
   );

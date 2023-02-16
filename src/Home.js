@@ -18,13 +18,7 @@ import Footer from './Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { view } from './store/viewitemSlice';
 import { setItem, clearItem } from './store/itemProofSlice';
-import ViewItem from './ViewItem';
 import { viewPage } from './store/viewpageSlice';
-import CheckOrder from './CheckOrder';
-import Sizing from './Sizing';
-import Login from './Login';
-import Signup from './Signup';
-import Thanks from './Thanks';
 import { useNavigate } from 'react-router-dom';
 
 function ItemCosts(itemName) {
@@ -76,10 +70,20 @@ function ItemCard({ itemName, itemImage, itemProof }) {
 function Home() {
   const currentPageView = useSelector((state) => state.viewpage.value);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   if (currentPageView === 'submitted') {
     navigate('/thank_you');
   }
+
+  function handleDonate() {
+    dispatch(viewPage('donate'));
+    navigate('/donate');
+  }
+
+  const textCenter = {
+    textAlign: 'center'
+  };
 
   return (
       <div className='page-container'>
@@ -87,6 +91,13 @@ function Home() {
         <main>
           <div className='manage-banner'>
             Tribe 2023 Jersey Order
+          </div>
+          <div className='item-display'>
+            <div className='thank-you'>
+              <p style={textCenter}>
+                Financial support is incredibly important to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a onClick={() => handleDonate()}>here</a>.
+              </p>
+            </div>
           </div>
           <div className='manage-card-holder'>
             <div className='manage-cards'>
