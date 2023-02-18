@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from './store/cartSlice';
 import { getItemID, getItemSizeId } from './store/OrderObject';
+import { viewPage } from './store/viewpageSlice';
 
 class ItemOrderForm extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class ItemOrderForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSizing = this.handleSizing.bind(this);
   }
 
   handleChange(event) {
@@ -58,7 +60,16 @@ class ItemOrderForm extends React.Component {
     });
   }
 
+  handleSizing() {
+    // this.props.viewPage('sizing');
+    this.props.handle_sizing();
+  }
+
   render() {
+    const pointer = {
+      cursor: 'pointer'
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         {
@@ -78,7 +89,14 @@ class ItemOrderForm extends React.Component {
           <p>Custom Number: <input name='item_custom_number' type='text' value={this.state.item_custom_number} onChange={this.handleChange} placeholder='Optional'/></p>
         </div>
         <div className='bottom-border-box'>
-          <h2>Sizing:</h2>
+          <div>
+            <h2><span title='Size Chart' style={pointer} onClick={() => this.handleSizing()}>
+              <svg xlmns="http://www.w3.org/2000/svg" title='Size Chart' width="16" height="16" fill="currentColor" viewBox="0 96 960 960">
+                <path d="M478 816q21 0 35.5-14.5T528 766q0-21-14.5-35.5T478 716q-21 0-35.5 14.5T428 766q0 21 14.5 35.5T478 816Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342 438l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506 530q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197 859q-54-54-85.5-127T80 576q0-83 31.5-156T197 293q54-54 127-85.5T480 176q83 0 156 31.5T763 293q54 54 85.5 127T880 576q0 83-31.5 156T763 859q-54 54-127 85.5T480 976Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
+              </svg>
+            </span>
+            Sizing:</h2>
+          </div>
           {
             this.state.item_type === 'Shorts' &&
             <p><select name='item_size' value={this.state.item_size} onChange={this.handleChange} required>

@@ -42,6 +42,11 @@ function ViewItem() {
     navigate('/');
   }
 
+  function handleSizing() {
+    dispatch(viewPage('sizing'));
+    navigate('/size_chart');    
+  }
+
   return (
     <div className='page-container'>
       <Header/>
@@ -63,7 +68,7 @@ function ViewItem() {
           </div>
           <div className='item-description-box'>
             <h1 className='item-display-cost'>{ itemName === "Shorts" && "From "}${itemCost}</h1>
-            <ItemOrderForm item_type={itemName}/>
+            <ItemOrderForm item_type={itemName} handle_sizing={handleSizing}/>
           </div>
         </div>
       </main>

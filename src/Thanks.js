@@ -25,6 +25,7 @@ function About() {
             </p>
             <p style={textCenter}>
               If you are ready to pay for your order, simply Venmo <a href='https://venmo.com/u/GTTribe' target='_blank'>@GTTribe</a>.
+              Make sure you put your name and order info in the description so we know who paid!
               If you do not have Venmo, please email us and we will help work out an alternative method of payment.
               The payment deadline is <b>March 1st, 2023</b> and we'll send you a confirmation email of your order once you've paid.
               As always feel free to donate extra if you are feeling philanthropic! Thanks for supporting Tribe!

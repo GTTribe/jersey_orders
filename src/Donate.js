@@ -41,6 +41,7 @@ function Donate() {
             <p style={textCenter}>
               However you don't have to buy a jersey to donate to Tribe!
               To donate, simply Venmo <a href='https://venmo.com/u/GTTribe' target='_blank'>@GTTribe</a>.
+              Feel free to put your name and any well wishing message in the description so we know who donated!
               If you do not have Venmo, please email us and we will help work out an alternative method to donate.
             </p>
             <p style={textCenter}>              
