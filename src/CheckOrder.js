@@ -5,7 +5,7 @@ import './CheckOrder.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItemCost } from './store/OrderObject';
 import { db } from './firebase';
-import { setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { removeFromCart, clearCart } from './store/cartSlice';
 import { viewPage } from './store/viewpageSlice';
 import { resetUser } from './store/userSlice';
@@ -50,7 +50,8 @@ function CheckOrder() {
       pickup_method: userInfo['pickup_method'],
       orderItems: cart,
       total_items: getTotals(),
-      total_cost: getCost()
+      total_cost: getCost(),
+      timestamp: serverTimestamp()
     });
   
     dispatch(resetUser());
