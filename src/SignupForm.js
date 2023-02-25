@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
         <p>First Name: <input name='first_name' type='text' value={this.state.first_name} onChange={this.handleChange} placeholder='First Name' required/></p>
         <p>Last Name: <input name='last_name' type='text' value={this.state.last_name} onChange={this.handleChange} placeholder='Last Name' required/></p>
         <p>Email: <input name='email' type='email' value={this.state.email} onChange={this.handleChange} placeholder='i.e. gburdell@gatech.edu' required/></p>
-        <p>Pickup Method: <input name='pickup_method' type='text' value={this.state.pickup_method} onChange={this.handleChange} placeholder='i.e. I am in Atlanta/around Tech, I am friends with Tech people, etc. We do not mail stuff to you.' required/></p>
+        <p>Pickup Method: <input name='pickup_method' type='text' value={this.state.pickup_method} onChange={this.handleChange} placeholder='i.e. I am in Atlanta/around Tech, I am friends with Tech people, etc. We can arrange to mail stuff to you in the US.' required/></p>
         <input type='submit' value='Register'/>
       </form>
     );
