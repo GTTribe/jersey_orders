@@ -26,15 +26,15 @@ function ItemCosts(itemName) {
     case "Black Short Sleeve":
     case "Blue Short Sleeve":
     case "Light Short Sleeve":
-      return 35;
+      return 36;
     case "Black Long Sleeve":
     case "Blue Long Sleeve":
     case "Light Long Sleeve":
-      return 37;
+      return 38;
     case "Sun Hoodie":
-      return 46;
+      return 47;
     case "Shorts":
-      return 33;
+      return 34;
     default:
       return null;
   }
@@ -95,7 +95,13 @@ function Home() {
           <div className='item-display'>
             <div className='thank-you'>
               <p style={textCenter}>
-                Financial support is incredibly appreciated to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a onClick={() => handleDonate()}>here</a>.
+                Financial support is incredibly appreciated to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a href="https://mygeorgiatech.gatech.edu/giving/sewb-mens-ultimate" target='_blank'>here</a>.
+              </p>
+              <p style={textCenter}>
+                <b>Note*: </b>Unfortunately DH is dealing with a black fabric shortage at this moment for their Activ shorts. We will hold off on ordering shorts and will provide a re-order opportunity once DH resolves the issue.
+              </p>
+              <p style={textCenter}>
+                <b>You can preview the jerseys in live action <a href='https://www.flickr.com/photos/196620903@N07/albums/72177720311472772' target='_blank'>here</a>.</b>
               </p>
             </div>
           </div>
@@ -107,7 +113,7 @@ function Home() {
               <ItemCard itemName="Light Long Sleeve" itemImage={LightPreview} itemProof={LightLongSleeveProof}/>
               <ItemCard itemName="Blue Short Sleeve" itemImage={BluePreview} itemProof={BlueShortSleeveProof}/>
               <ItemCard itemName="Blue Long Sleeve" itemImage={BluePreview} itemProof={BlueLongSleeveProof}/>
-              <ItemCard itemName="Shorts" itemImage={ShortsPreview} itemProof={ShortsProof}/>
+              {/* <ItemCard itemName="Shorts" itemImage={ShortsPreview} itemProof={ShortsProof}/> */}
               <ItemCard itemName="Sun Hoodie" itemImage={SunHoodiePreview} itemProof={SunHoodieProof}/>
             </div>
           </div>

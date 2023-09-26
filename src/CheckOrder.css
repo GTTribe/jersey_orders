@@ -71,4 +71,5 @@ button[type=update]:hover {
 .trash-icon {
   text-align: center;
   vertical-align: middle;
+  cursor: pointer;
 }

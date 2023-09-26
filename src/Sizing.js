@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import sizingChart from './Size Chart 2020.jpg';
+import sizingChart from './Size Chart 2023.jpg';
 
 function Sizing() {
   const fixBorder = {

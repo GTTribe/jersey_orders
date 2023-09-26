@@ -76,8 +76,8 @@ class ItemOrderForm extends React.Component {
           this.state.item_type === 'Shorts' &&
           <div className='bottom-border-box'>
             <h2>Pocket Options:</h2>
-            <p><input name='item_subtype' type='radio' value='no_pockets' checked={this.state.item_subtype === 'no_pockets'} onChange={this.handleChange} required/>$33 without pockets</p>
-            <p><input name='item_subtype' type='radio' value='pockets' checked={this.state.item_subtype === 'pockets'} onChange={this.handleChange}/>$35 with pockets</p>
+            <p><input name='item_subtype' type='radio' value='no_pockets' checked={this.state.item_subtype === 'no_pockets'} onChange={this.handleChange} required/>$34 without pockets</p>
+            <p><input name='item_subtype' type='radio' value='pockets' checked={this.state.item_subtype === 'pockets'} onChange={this.handleChange}/>$36 with pockets</p>
           </div>
         }
         <div className='bottom-border-box'>

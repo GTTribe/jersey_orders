@@ -80,7 +80,7 @@ function CheckOrder() {
         </div>
         <div className='not-logged-in'>
           <div className='not-logged-in-content'>
-            Store closes February 26th!
+            Store closes October 4th!
           </div>
         </div>
         <div className='item-display'>

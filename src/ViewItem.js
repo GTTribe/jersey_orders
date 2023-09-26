@@ -14,15 +14,15 @@ function ItemCosts(itemName) {
     case "Black Short Sleeve":
     case "Blue Short Sleeve":
     case "Light Short Sleeve":
-      return 35;
+      return 36;
     case "Black Long Sleeve":
     case "Blue Long Sleeve":
     case "Light Long Sleeve":
-      return 37;
+      return 38;
     case "Sun Hoodie":
-      return 46;
+      return 47;
     case "Shorts":
-      return 33;
+      return 34;
     default:
       return null;
   }

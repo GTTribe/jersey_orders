@@ -79,15 +79,15 @@ export function getItemSizeName(item_size_id) {
 }
 
 const costTable = {
-  'shorts_with_pockets': 35,
-  'shorts_no_pockets': 33,
-  'black_short_sleeve': 35,
-  'black_long_sleeve': 37,
-  'light_short_sleeve': 35,
-  'light_long_sleeve': 37,
-  'blue_short_sleeve': 35,
-  'blue_long_sleeve': 37,
-  'sun_hoodie': 46
+  'shorts_with_pockets': 36,
+  'shorts_no_pockets': 34,
+  'black_short_sleeve': 36,
+  'black_long_sleeve': 38,
+  'light_short_sleeve': 36,
+  'light_long_sleeve': 38,
+  'blue_short_sleeve': 36,
+  'blue_long_sleeve': 38,
+  'sun_hoodie': 47
 }
 
 export function getItemCost(item_type, item_subtype) {
