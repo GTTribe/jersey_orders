@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/jersey_orders/static/css/main.19fef6a5.css",
-    "main.js": "/jersey_orders/static/js/main.f51e50ac.js",
+    "main.js": "/jersey_orders/static/js/main.c37c1e1a.js",
     "static/js/787.100751fb.chunk.js": "/jersey_orders/static/js/787.100751fb.chunk.js",
     "static/media/Size Chart 2023.jpg": "/jersey_orders/static/media/Size Chart 2023.8586c17dc8acb25a309a.jpg",
     "static/media/LightShortSleeveProof.png": "/jersey_orders/static/media/LightShortSleeveProof.22075d56814c0de54ea5.png",
@@ -32,11 +32,11 @@
     "static/media/SunHoodiePreview.png": "/jersey_orders/static/media/SunHoodiePreview.11ba75f6e0954853e948.png",
     "index.html": "/jersey_orders/index.html",
     "main.19fef6a5.css.map": "/jersey_orders/static/css/main.19fef6a5.css.map",
-    "main.f51e50ac.js.map": "/jersey_orders/static/js/main.f51e50ac.js.map",
+    "main.c37c1e1a.js.map": "/jersey_orders/static/js/main.c37c1e1a.js.map",
     "787.100751fb.chunk.js.map": "/jersey_orders/static/js/787.100751fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.19fef6a5.css",
-    "static/js/main.f51e50ac.js"
+    "static/js/main.c37c1e1a.js"
   ]
 }
