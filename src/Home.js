@@ -94,7 +94,10 @@ function Home() {
           </div>
           <div className='item-display'>
             <div className='thank-you'>
-              <p style={textCenter}>
+              <div className='not-logged-in-content'>
+                Store is now closed. Please check your email for order confirmation.
+              </div>
+              {/* <p style={textCenter}>
                 Financial support is incredibly appreciated to help grow Tribe. Don’t want a jersey but still want to support the team? Learn more <a href="https://mygeorgiatech.gatech.edu/giving/sewb-mens-ultimate" target='_blank'>here</a>.
               </p>
               <p style={textCenter}>
@@ -102,7 +105,7 @@ function Home() {
               </p>
               <p style={textCenter}>
                 <b>You can preview the jerseys in live action <a href='https://www.flickr.com/photos/196620903@N07/albums/72177720311472772' target='_blank'>here</a>.</b>
-              </p>
+              </p> */}
             </div>
           </div>
           <div className='manage-card-holder'>
