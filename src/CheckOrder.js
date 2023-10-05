@@ -61,6 +61,11 @@ function CheckOrder() {
     navigate('/thank_you');
   }
 
+  function thankYou() {
+    dispatch(viewPage('submitted'));
+    navigate('/thank_you');
+  }
+
   function handleBack() {
     dispatch(viewPage('home'));
     navigate('/');
@@ -79,8 +84,11 @@ function CheckOrder() {
           Your Order Information
         </div>
         <div className='not-logged-in'>
-          <div className='not-logged-in-content'>
+          {/* <div className='not-logged-in-content'>
             Store closes October 4th!
+          </div> */}
+          <div className='not-logged-in-content'>
+            Store is now closed. Please check your email for order confirmation.
           </div>
         </div>
         <div className='item-display'>
@@ -152,12 +160,15 @@ function CheckOrder() {
             <a className='login no-border' onClick={() => handleBack()}>Continue Shopping</a>
           </div>
         </div>
-        {
+        {/* {
           isLoggedIn &&
           <div className='update-button'>
             <button type="update" onClick={() => submitOrder()}>Save Order</button>
           </div>
-        }
+        } */}
+        <div className='update-button'>
+          <button type="update" onClick={() => thankYou()}>Payment Instructions</button>
+        </div>
       </main>
       <Footer/>
     </div>
